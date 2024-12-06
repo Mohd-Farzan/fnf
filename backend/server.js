@@ -18,6 +18,7 @@ dbConnect;
 // Correct CORS middleware configuration
 app.use(cors({
   origin: 'http://localhost:5173', // Ensure this matches your frontend's origin
+  origin:'book-shop-sigma-ten.vercel.app',
   methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'OPTIONS','PUT'], // Correct spelling and add 'OPTIONS'
   allowedHeaders: [
     'Content-Type',
