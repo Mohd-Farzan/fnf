@@ -1,4 +1,4 @@
-import {Routes , Route,useNavigate, Navigate} from 'react-router-dom';
+import {Routes , Route} from 'react-router-dom';
 import AuthSignup from './pages/auth/Signup';
 import AuthLogin from './pages/auth/Login';
 import Authlayout from './componant/auth/layout';
@@ -7,7 +7,7 @@ import Admindashboard from './pages/admin-view/dashboard';
 import Adminproduct from './pages/admin-view/product';
 import Adminorder from './pages/admin-view/order';
 import Shoplayout from './componant/shoping-view/layout';
-import ShopingAcount from './componant/shoping-view/address';
+// import ShopingAcount from './componant/shoping-view/address';
 import ShopingCheackout from './pages/shoping-view/checkout';
 import ShopingList from './pages/shoping-view/list';
 
@@ -18,7 +18,7 @@ import { checkAuth } from './store/auth-slice';
 import React, { useEffect } from 'react';
 import ShopingHome from './pages/shoping-view/home';
 import ShopAccount from './pages/shoping-view/account';
-import PaypalCancel from './pages/shoping-view/paypalCancel';
+// import PaypalCancel from './pages/shoping-view/paypalCancel';
 import PaypalReturn from './pages/shoping-view/paypalReturn';
 function App() {
     const dispatch = useDispatch();

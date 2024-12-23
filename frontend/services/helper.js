@@ -1,1 +1,0 @@
-export const BASE_URL='https://book-shop-backend-0ssy.onrender.com'
