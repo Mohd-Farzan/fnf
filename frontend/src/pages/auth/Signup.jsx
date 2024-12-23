@@ -7,8 +7,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const initialState = {
-  name: '',
   email: '',
+  userName:'',
   age: '',
   password: '',
 };

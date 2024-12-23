@@ -5,7 +5,7 @@ const loginModel = require('../../models/loginModel');
 
 // Signup function
 const signupUser = async (req, res) => {
-    const { userName, email, age, password } = req.body;
+    const { email,userName, age, password } = req.body;
     try {
         const userExist = await signupModel.findOne({ email });
         if (userExist) {
@@ -15,8 +15,8 @@ const signupUser = async (req, res) => {
         const saltRounds = 10;
         const hash_password = await bcrypt.hash(password, saltRounds);
         const newUser = new signupModel({
-            userName,
             email,
+            userName,
             age,
             password: hash_password,
         });

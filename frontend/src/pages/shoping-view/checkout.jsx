@@ -6,12 +6,14 @@ import CartItemsContent from '../../componant/shoping-view/cart-items-content'
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 import { createNewOrder } from '@/store/shop/order-slice'
+import { Navigate, useNavigate } from 'react-router-dom'
 function ShopingCheackout() {
   const {cartItems}=useSelector((state)=>state.ShopingCart)
   const{ approvalURL}=useSelector((state)=>state.shoppingOrder)
   const{user}=useSelector((state)=>state.auth)
   const[currentSelectedAddress,setCurrentSelectedAddress]=useState(null)
   const[isPaymentStart,setIspaymentStart]=useState(false)
+  const navigate=useNavigate()
   const frontendTotal = cartItems && cartItems.items && cartItems.items.length > 0
   ? cartItems.items.reduce(
       (sum, currentItem) =>
@@ -23,7 +25,7 @@ function ShopingCheackout() {
     )
   : 0;
   const dispatch=useDispatch()
-console.log(currentSelectedAddress,'address')
+// console.log(currentSelectedAddress,'address')
   function handleInitiatePapalPayment(){
       const orderData={
         userId:user?.id,
@@ -68,8 +70,13 @@ console.log(currentSelectedAddress,'address')
 }
 if( approvalURL){
     window.location.href=approvalURL
-    alert('please wait to redirect to payment')
+    alert('please wait to redirect to payment');
+    
+    if(setIspaymentStart){
+      alert('payment is succefull')
+    }
 }
+
   
   return <div className="flex flex-col">
     <div className="relative h-[300px] w-full overflow-hidden">

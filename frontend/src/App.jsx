@@ -26,7 +26,7 @@ function App() {
 
     useEffect(() => {
         dispatch(checkAuth());
-    }, [dispatch]);
+    },[dispatch]);
      
      
 
