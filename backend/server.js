@@ -5,13 +5,16 @@ const cors = require('cors');
 const dbConnect = require('./config/dbConnect');
 const authRouter = require('./routes/auth/auth-routes');
 const router = require('./routes/admin/product-routes');
-const shopProductRouter=require('./routes/shop/products-rout')
-const shopCartRouter=require('./routes/shop/cart-routes')
-const shopAddressRouter=require('./routes/shop/address-routes')
-const shopOrderRouter=require('./routes/shop/orders-routes')
+const shopProductRouter=require('./routes/shop/products-rout');
+const shopCartRouter=require('./routes/shop/cart-routes');
+const shopAddressRouter=require('./routes/shop/address-routes');
+const shopOrderRouter=require('./routes/shop/orders-routes');
+const path = require('path');
+const { configDotenv } = require('dotenv');
 dbConnect;
 const PORT = process.env.PORT || 5000;
 const app = express();
+const _direname=path.resolve();
 app.use(cors({
   origin: 'http://localhost:5173',
   // Ensure this matches your frontend's origin
@@ -33,4 +36,8 @@ app.use('/api/shop/products',shopProductRouter)
 app.use('/api/shop/cart',shopCartRouter)
 app.use('/api/shop/address', shopAddressRouter)
 app.use('/api/shop/order',shopOrderRouter)
+app.use(express.static(path.join(__dirname,"/frontend/dist")))
+app.get("*",(_,res)=>{
+  res.sendFile(path.resolve(__dirname,"frontend","dist","index.html"));
+})
 app.listen(PORT, () => console.log(`app running on port ${PORT}`));
