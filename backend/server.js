@@ -14,7 +14,7 @@ const { configDotenv } = require('dotenv');
 dbConnect;
 const PORT = process.env.PORT || 3000;
 const app = express();
-const _direname=path.resolve();
+const _dirname=path.resolve();
 app.use(cors({
   origin: 'http://localhost:5173',
   // Ensure this matches your frontend's origin
@@ -36,8 +36,8 @@ app.use('/api/shop/products',shopProductRouter)
 app.use('/api/shop/cart',shopCartRouter)
 app.use('/api/shop/address', shopAddressRouter)
 app.use('/api/shop/order',shopOrderRouter)
-app.use(express.static(path.join(__dirname,"/frontend/dist")))
+app.use(express.static(path.join(_dirname,"/frontend/dist")))
 app.get("*",(_,res)=>{
-  res.sendFile(path.resolve(__dirname,"frontend","dist","index.html"));
+  res.sendFile(path.resolve(_dirname,"frontend","dist","index.html"));
 })
 app.listen(PORT, () => console.log(`app running on port ${PORT}`));
