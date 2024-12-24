@@ -6,7 +6,7 @@ const initialState={
 }
 export const addToCartItems= createAsyncThunk('cart/addToCart',
     async({userId,productId,quantity})=>{
-    const response= await axios.post("http://localhost:5000/api/shop/cart/add",
+    const response= await axios.post("https://fnf-eun3.onrender.com/api/shop/cart/add",
         {
             userId,
             productId,
@@ -17,12 +17,12 @@ export const addToCartItems= createAsyncThunk('cart/addToCart',
 }
 );
 export const fetchCart = createAsyncThunk('cart/fetchCart', async (userId) => {
-        const response = await axios.get(`http://localhost:5000/api/shop/cart/get/${userId}`);
+        const response = await axios.get(`https://fnf-eun3.onrender.com/api/shop/cart/get/${userId}`);
         return response.data;   
 });
 
 export const updateCart=createAsyncThunk('cart/updateCart',async({userId,productId,quantity})=>{
-    const response=await axios.put('http://localhost:5000/api/shop/cart/update-cart',{userId,productId,quantity});
+    const response=await axios.put('https://fnf-eun3.onrender.com/api/shop/cart/update-cart',{userId,productId,quantity});
     return response.data
 })
 
@@ -30,7 +30,7 @@ export const deleteCart = createAsyncThunk(
     'cart/deleteCart',
     async ({ userId, productId }, { rejectWithValue }) => {
         
-            const response = await axios.delete(`http://localhost:5000/api/shop/cart/delete/${userId}/${productId}`);
+            const response = await axios.delete(`https://fnf-eun3.onrender.com/api/shop/cart/delete/${userId}/${productId}`);
             return response.data;
     }
 );

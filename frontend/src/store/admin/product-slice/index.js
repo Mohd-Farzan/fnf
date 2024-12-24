@@ -7,7 +7,7 @@ const initialState={
 
 export const addNewProduct=createAsyncThunk('products/addNewProduct',
     async (formData)=>{
-    const result=await axios.post('http://localhost:5000/api/admin/products/add',formData,{
+    const result=await axios.post('https://fnf-eun3.onrender.com/api/admin/products/add',formData,{
         headers:{
             'Content-Type':'application/json'
         }
@@ -17,14 +17,14 @@ export const addNewProduct=createAsyncThunk('products/addNewProduct',
 
 export const FathcAllProduct=createAsyncThunk('products/FatchAllProduct',
     async ()=>{
-    const result=await axios.get('http://localhost:5000/api/admin/products/get')
+    const result=await axios.get('https://fnf-eun3.onrender.com/api/admin/products/get')
     return result?.data;
 })
 
 export const editProduct = createAsyncThunk(
     'products/editProduct',
     async ({id, formData }) => {  // Destructuring a single object with id and formData
-      const result = await axios.put(`http://localhost:5000/api/admin/products/edit/${id}`, formData, {
+      const result = await axios.put(`https://fnf-eun3.onrender.com/api/admin/products/edit/${id}`, formData, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -37,7 +37,7 @@ export const editProduct = createAsyncThunk(
 
 export const deleteProduct=createAsyncThunk('products/deleteProduct',
     async (id)=>{
-    const result=await axios.delete(`http://localhost:5000/api/admin/products/delete/${id}`)
+    const result=await axios.delete(`https://fnf-eun3.onrender.com/api/admin/products/delete/${id}`)
     return result?.data;
 })
 const AdminProductSlice=createSlice({

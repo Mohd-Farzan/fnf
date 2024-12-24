@@ -11,12 +11,12 @@ const shopAddressRouter=require('./routes/shop/address-routes');
 const shopOrderRouter=require('./routes/shop/orders-routes');
 const path = require('path');
 require('dotenv').config();
-dbConnect();
+dbConnect;
 const PORT = process.env.PORT || 3000;
 const app = express();
 const _dirname=path.resolve();
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://fnf-eun3.onrender.com/',
   // Ensure this matches your frontend's origin
   methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT','OPTIONS'], // Correct spelling and add 'OPTIONS'
   allowedHeaders: [

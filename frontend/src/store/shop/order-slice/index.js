@@ -6,11 +6,11 @@ const initialState={
     orderId:null
 }
 export const createNewOrder=createAsyncThunk('/order/createNewOrder',async(orderData)=>{
-    const response=await axios.post('http://localhost:5000/api/shop/order/create',orderData);
+    const response=await axios.post('https://fnf-eun3.onrender.com/api/shop/order/create',orderData);
     return response.data
 })
 export const capturePayment=createAsyncThunk('/order/capture',async({paymentId,payerId,orderId})=>{
-    const response=await axios.post('http://localhost:5000/api/shop/order/capture',{paymentId,payerId,orderId});
+    const response=await axios.post('https://fnf-eun3.onrender.com/api/shop/order/capture',{paymentId,payerId,orderId});
     return response.data
 })
 

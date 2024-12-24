@@ -14,7 +14,7 @@ export const SignupUser = createAsyncThunk(
     'auth/signup',
     async (FormData, { rejectWithValue }) => {
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/signup', FormData, {
+            const response = await axios.post('https://fnf-eun3.onrender.com/api/auth/signup', FormData, {
                 withCredentials: true
             });
             return response.data;
@@ -31,7 +31,7 @@ export const LoginUser = createAsyncThunk(
     'auth/login',
     async (FormData, { rejectWithValue }) => {
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/login', FormData, {
+            const response = await axios.post('https://fnf-eun3.onrender.com/api/auth/login', FormData, {
                 withCredentials: true
             });
 
@@ -52,7 +52,7 @@ export const LogoutUser = createAsyncThunk(
     'auth/logout',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/logout', {}, {
+            const response = await axios.post('https://fnf-eun3.onrender.com/api/auth/logout', {}, {
                 withCredentials: true
             });
             localStorage.removeItem('token'); // Remove token from local storage upon logout
@@ -71,7 +71,7 @@ export const checkAuth = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
             const token = localStorage.getItem('token'); // Fetch the token from localStorage
-            const response = await axios.get('http://localhost:5000/api/auth/checkauth', {
+            const response = await axios.get('https://fnf-eun3.onrender.com/api/auth/checkauth', {
                 withCredentials: true,
                 headers: {
                     'Authorization': `Bearer ${token}`,

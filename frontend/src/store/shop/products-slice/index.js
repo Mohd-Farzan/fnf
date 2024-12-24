@@ -11,14 +11,14 @@ export const FatchAllFilterProduct=createAsyncThunk('products/FatchAllFilterProd
             ...filtersParams,
             sortBy:sortParams
         })
-    const result=await axios.get(`http://localhost:5000/api/shop/products/get?${query}`)
+    const result=await axios.get(`https://fnf-eun3.onrender.com/api/shop/products/get?${query}`)
     return result?.data;
 })
 
 export const fetchProductDetails=createAsyncThunk('products/fetchProductDetails',
     async (id)=>{
         // console.log(id,'id')
-    const result=await axios.get(`http://localhost:5000/api/shop/products/get/${id}`)
+    const result=await axios.get(`https://fnf-eun3.onrender.com/api/shop/products/get/${id}`)
     return result?.data;
 })
 
