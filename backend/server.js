@@ -12,7 +12,7 @@ const shopOrderRouter=require('./routes/shop/orders-routes');
 const path = require('path');
 const { configDotenv } = require('dotenv');
 dbConnect;
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 const _direname=path.resolve();
 app.use(cors({
