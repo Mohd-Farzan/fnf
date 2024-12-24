@@ -11,7 +11,7 @@ const shopAddressRouter=require('./routes/shop/address-routes');
 const shopOrderRouter=require('./routes/shop/orders-routes');
 const path = require('path');
 require('dotenv').config();
-dbConnect();
+dbConnect;
 const PORT = process.env.PORT || 3000;
 const app = express();
 const _dirname=path.resolve();
