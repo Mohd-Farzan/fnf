@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import book1 from '../../assets/img/download.jpeg'
-import book2 from '../../assets/img/images.jpeg'
-import book3 from '../../assets/img/slide2.jpeg'
+import slide1 from '../../assets/img/slide_1.jpg'
+import slide2 from '../../assets/img/slide_2.jpg'
+import slide3 from '../../assets/img/slide_3.jpg'
 import { Button } from '@/components/ui/button'
 import { BabyIcon, ChevronLeftIcon, ChevronRightIcon,  ShirtIcon, ShovelIcon, SquareXIcon, WatchIcon } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
@@ -16,7 +16,7 @@ function ShopingHome() {
     const{productList,productDetails} = useSelector((state)=>state.ShopProducts)
     const{user} = useSelector((state)=>state.auth)
     const [currentSlide,setCurrentSlide]=useState(0);
-    const slides=[book1,book2,book3];
+    const slides=[slide1,slide2,slide3];
     const[openDetailsDialog,setOpenDetailsDialog]=useState(false)
     const dispatch=useDispatch();
     const navigate=useNavigate();
