@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import bgImg from '../../../public/images/book3.jpg'
+import bgImg from '../../../public/images/book2.jpg'
 function Authlayout() {
   return (
     <div className='flex min-h-screen w-full'>
