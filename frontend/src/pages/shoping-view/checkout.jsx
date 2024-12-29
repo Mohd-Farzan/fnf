@@ -1,5 +1,5 @@
 import React from 'react'
-import book1 from '../../assets/img/book1.jpg'
+import book1 from '../../assets/img/slide_1.jpg'
 import Address from '../../componant/shoping-view/address'
 import { useDispatch, useSelector } from 'react-redux'
 import CartItemsContent from '../../componant/shoping-view/cart-items-content'

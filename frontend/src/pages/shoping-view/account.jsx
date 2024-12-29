@@ -1,5 +1,5 @@
 import React from 'react'
-import book2 from '../../assets/img/book2.jpg'
+import slide2 from '../../assets/img/slide_2.jpg'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Orders from '@/componant/shoping-view/orders'
 import Address from '@/componant/shoping-view/address'
@@ -9,7 +9,7 @@ function ShopAccount() {
   return <div className="flex flex-col">
     <div className="relative h-[300px] w-full overflow-hidden">
         <img
-        src={book2}
+        src={slide2}
         className='w-full h-full object-cover object-center'
         />
     </div>
